@@ -1,0 +1,14 @@
+.git
+.github
+.env
+target
+.venv
+bin
+out
+__pycache__
+.pytest_cache
+.ruff_cache
+tests
+*.sqlite
+*.wav
+*.csv

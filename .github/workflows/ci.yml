@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: install
+        run: uv sync --locked
+      - name: lint
+        run: uv run ruff check .
+      - name: test
+        run: uv run pytest -q
+      - name: Run the local demo
+        env:
+          SKIP_CHECKS: "1"
+        run: bash run.sh

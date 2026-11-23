@@ -1,0 +1,16 @@
+.env
+*.verdicts.jsonl
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+out/
+*.audit.jsonl
+*.sqlite
+*.wav
+
+# Local publishing materials
+/linkedin.md
+/github.sh
